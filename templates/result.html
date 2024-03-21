@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    @font-face {
+        font-family: 'Recoleta';
+        src: url('static/Recoleta-Bold.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'Montserrat-bold';
+        src: url('static/Montserrat-Bold.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'Montserrat-light';
+        src: url('static/Montserrat-Light.ttf') format('truetype');
+    }
+    html{
+        display: flex;
+        justify-content: center;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        width: 100%;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fccd12;
+        max-width: 920px;
+    }
+    h1{
+        width: 100%;
+        text-align: center;
+        font-family: 'Recoleta';
+        color: #c15728;
+    }
+    p{ 
+        font-family: 'Montserrat-light';
+        font-size: 25px;
+        text-align: center;
+        margin: 0 20%;
+        margin-bottom: 30px;
+    }
+    label{
+        display: flex;
+        font-family: 'Montserrat-bold';
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        width: 200px;
+    }
+    input{
+        grid-row-start: 2;
+        background-color: transparent;
+        border-radius: 5px;
+        border: black solid;
+        height: 50px;
+        width: 200px;
+    }
+    .inputs{
+        display: grid;
+        grid-template-areas: "a c e" "b d f";
+        row-gap: 10px;
+        width: 100%;
+        justify-content: space-between;
+        justify-items: center;
+        justify-self: center;
+    }
+    .label1{
+        grid-area: a;
+    }
+    .label2{
+        grid-area: c;
+    }
+    .label3{
+        grid-area: e;
+    }
+    .input1{
+        grid-area: b;
+    }
+    .input2{
+        grid-area: d;
+    }
+    .input3{
+        grid-area: f;
+    }
+    .submit-button{
+        width: 160px;
+        height: 40px;
+        font-size: 20px;
+        font-family: 'Montserrat-bold';
+        color: #fccd12;
+        background-color: #c15728;
+        border: none;
+        border-radius: 5px;
+    }
+    .submit-button:hover{
+        background-color: #b14e23;
+    }
+    .submit-button:focus{
+        background-color: #692f16;
+    }
+    .img1{
+        width: 200px;
+        position: fixed;
+        top: 20px;
+        left: 50px;
+    }
+    .img2{
+        width: 200px;
+        position: fixed;
+        bottom: 20px;
+        right: 50px;
+        z-index: -1;
+    }
+    
+
+    @media screen and (max-width:960px) {
+        .img1{
+            position: relative;
+            left: -40%;
+        }
+        .img2{
+            padding-top: 10px;
+            position: relative;
+            left: 40%;
+        }
+        .inputs{
+            grid-template-areas: "a" "b" "c" "d" "e" "f";
+            width: fit-content;
+        }
+    }
+    @media screen and (max-width:688px) {
+        .img1{
+            left: -30%;        
+        }
+        .img2{
+            left: 30%;        
+        }
+        p, label{
+            font-size: 15px;
+        }
+        
+    }
+</style>
+<head>
+    <title>Cilantro</title>
+</head>
+<body>
+        <img class="img1" src="{{ url_for('static', filename='Picture1.png') }}"/>
+        <h1>Thank You Mama!</h1>
+        <p style="font-size: 30px;">Mama {{ mother_name }} made<br>
+            <span style="font-weight: bold; font-size: 35px;">{{ multiplied_number }}</span><br>
+            meals!</p>
+                    <p>Take a <b>screenshot</b>, share your meal counter results on Instagram as a story. Tag us and receive a special promo code to make her day!</p>
+    </div>
+    <img src="{{ url_for('static', filename='logo.png') }}" width="70%">
+    <img class="img2" src="{{ url_for('static', filename='Picture2.png') }}"/>
+    
+</body>
+</html>

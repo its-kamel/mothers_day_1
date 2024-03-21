@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mama Meal</title>
+<style>
+    @font-face {
+          font-family: 'Recoleta';
+          src: url('static/Recoleta-Bold.ttf') format('truetype');
+      }
+      @font-face {
+          font-family: 'Montserrat-bold';
+          src: url('static/Montserrat-Bold.ttf') format('truetype');
+      }
+      @font-face {
+          font-family: 'Montserrat-ExtraBold';
+          src: url('static/Montserrat-ExtraBold.ttf') format('truetype');
+      }
+      @font-face {
+          font-family: 'Montserrat-light';
+          src: url('static/Montserrat-Light.ttf') format('truetype');
+      }
+      @font-face {
+          font-family: 'Montserrat-Regular';
+          src: url('static/Montserrat-Regular.ttf') format('truetype');
+      }
+      body {
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fffbcb;
+          height: 100vh;
+          background-color: #fece00;
+          position: relative;
+        flex-direction: column;
+      }
+      .frame {
+        /* background-image: url("/bg1.png");
+        background-size: cover;
+        background-position: center;
+        background-color: #fece00;
+        height: 100vh; */
+
+        position: absolute;
+        /* top: 0;
+        left: 0; */
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        max-width: 800px;
+        margin: auto auto;
+          
+      }
+    .logo{
+      width: 55vw;
+      max-width: 400px;
+    }
+    .dish{
+      width: 100px;
+      height: 100px;
+      margin: auto auto;
+      
+ 
+      /* position: absolute;
+    top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    }
+    p{ 
+          font-family: 'Montserrat-light';
+          font-size: 12px;
+          text-align: center;
+          color: #fffbca;
+          line-height: 1.2;
+          margin-bottom: 0.5em;
+  
+          /* text-align: center;
+          margin: 0 20%;
+          margin-bottom: 30px; */
+      }
+    p1{ 
+          font-family: 'Montserrat-Regular';
+          font-size: 13px;
+          text-align: center;
+          color: #fffbca;
+          line-height: 1.5;
+          margin-bottom: 0.1em;
+  
+          /* text-align: center;
+          margin: 0 20%;
+          margin-bottom: 30px; */
+      }
+      .container {
+          background-color: #21342d;
+          border-radius: 10px;
+          width: 65vw;
+          padding: 20px;    
+          margin-top: 3em;
+          max-width: 400px;
+          text-align: center;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          z-index: 1;
+  
+      }
+      form {
+          display: flex;
+          flex-direction: column;
+          margin-left: 2em;
+          margin-right: 2em;
+      }
+
+      .title{
+        font-family: 'Recoleta';
+        color: #fece00;
+        text-align: center;
+        font-size: 2.8em;
+        margin-bottom: 0.5em;
+        margin-top: 0.1em;
+        line-height: 1;
+      }
+      label {
+          font-family: 'Montserrat-Regular';
+          font-size: 14px;
+          margin-bottom: 10px;
+          text-align: center;
+          display: inline-block;
+          max-width: 100%; /* Set the maximum width */
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="tel"],
+      textarea {
+          font-family: 'Montserrat-Regular';
+          font-size: 14px;
+          text-align: center;
+          padding: 7px;
+          margin-bottom: 10px;
+        background-color: #fffbcd;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          width: 100%;
+      }
+      input[type="submit"] {
+          padding: 7px;
+          width: 100px;
+          background-color: #c15628;
+          font-family: 'Montserrat-ExtraBold';
+          color: #fffbcd;
+          border: none;
+          border-radius: 5px;
+        font-size: 0.9em;
+          cursor: pointer;
+          display: block;
+      margin: 0 auto;
+      margin-top: 1em;
+      }
+  </style>
+</head>
+<body>
+
+    <img src="{{ url_for('static', filename='background.png') }}" alt="Frame Image" class="frame">
+    <img src="{{ url_for('static', filename='logo.png') }}" class="logo">
+
+<div class="container">
+    <h2 class="title">Thank You Mama!</h2>
+  <p style="font-size: 30px;">Mama {{ mother_name }} made<br>
+  <span style="font-size: 35px; font-family: 'Montserrat-Light';color: rgb(252, 205, 18);">{{ multiplied_number }}</span><br>
+  Meals!</p>
+  <img src="{{ url_for('static', filename='dish.png') }}" alt="Dish Image" class ="dish"><br>
+  <p1 style=" color: rgb(252, 205, 18);">Your mom is a culinary superstar!<br>Grateful for her meals!</p1><br><br>
+  <p1>Take a screenshot, <b>Share</b> your meal counter results on Instagram as a <b>story</b>. <b>Tag us</b> and receive a special <b>promo Code</b> to make her day!</p1>   
+</div>
+
+</body>
+</html>
